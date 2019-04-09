@@ -11,7 +11,7 @@ app.use(express.static(pathdirectory))
 hbs.registerPartials(partialspath)
 app.set("view engine","hbs")
 
-app.get("/index",(req,res)=>{
+app.get("",(req,res)=>{
 
     res.render("index",{
         name:"Piyush Wadhwani",
