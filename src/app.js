@@ -18,6 +18,14 @@ app.get("",(req,res)=>{
         title:"Weather"
     })
 })
+
+    app.get("/index",(req,res)=>{
+
+        res.render("index",{
+            name:"Piyush Wadhwani",
+            title:"Weather"
+        })
+})
 app.get("/about",(req,res)=>{
     res.render("about",{
         title:"About us",
@@ -50,7 +58,8 @@ if(error)
 }
 
 weathercode(latitude,longitude,(error,forecastdata)=>{
-if(error){
+if(error)
+{
     res.send(error)
 }
 else{
@@ -61,8 +70,7 @@ res.send(
         address:req.query.address,
         
     }
-)
-}
+)}
 
 })
     })
@@ -82,3 +90,4 @@ app.get("*",(req,res)=>{
 app.listen(port,()=>{
     console.log("server is up ...")
 })
+
